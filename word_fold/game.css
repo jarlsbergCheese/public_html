@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+#cell-holder {
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+
+    aspect-ratio: 1/1;
+    width: 50%;
+    gap: 8px;
+}
+
+#reset {
+    float: left;
+}
+
+.cell {
+
+    background-color: hsl(120, 70%, 75%);
+    border-radius: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: xx-large;
+    overflow-wrap: anywhere;
+
+}
+
+.cell.selected{
+    border: lightcoral 2px solid;
+}

@@ -68,7 +68,7 @@ div#tswfooter {
 }
 
 #dog{
-	transform: rotate3d(1,1,1,calc(var(--rotation) * 1000000)) translateZ(calc(sin(calc(var(--rotation) * 10)) * 1000px));
+	transform: translateX(calc(sin(calc(var(--rotation) * 10)) * 50px)) rotate3d(1,1,1,calc(var(--rotation) * 10));
 	border-radius: 100000px;
 	filter: sepia(10000%);
 
