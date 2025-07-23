@@ -4,6 +4,7 @@
 */
 body {
 	font-family: Arial, Helvetica, sans-serif ;
+	/* background-color: hsl(180, 100%, 70%)	; */
 }
 img {
 	max-width: 100% ;
@@ -59,3 +60,17 @@ div#tswfooter {
 	color: #000 ;
 	background-color: hsl(118, 100%, 70%) ;
 }
+
+#caleb{
+
+	color: hsl(var(--rotation),100%,50%); 
+
+}
+
+#dog{
+	transform: rotate3d(1,1,1,calc(var(--rotation) * 1000000)) translateZ(calc(sin(calc(var(--rotation) * 10)) * 1000px));
+	border-radius: 100000px;
+	filter: sepia(10000%);
+
+}
+
