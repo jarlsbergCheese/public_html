@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gompei's Grass Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./game.js" defer></script>
+</head>
+
+<body>
+    <h1 class="center">Gompei's Grass Game</h1>
+    <h2 class="center" id="score">Score: 0</h2>
+    <div id="store-container">
+        <div class="store" name="Lawn" cost="5" onclick="buy(event.currentTarget)">
+            <div class="widget" reap="2" cooldown="0.5" auto="false" name="Lawn">
+                <p>Lawn</p>
+                <div class="overlay-slide" style="animation-duration: 0.5s;"></div>
+            </div>
+            <p>Lawn</p>
+            <p>5 points</p>
+            <p>+2 sqft</p>
+            <p>0.5s</p>
+        </div>
+        <div class="store" name="Baby-Gompei" cost="10" onclick="buy(event.currentTarget)">
+            <div class="widget" reap="3" cooldown="1" auto="true" name="Baby-Gompei">
+                <p>Baby-Gompei</p>
+                <div class="overlay-slide" style="animation-duration: 1s;"></div>
+            </div>
+            <p>Baby Gompei</p>
+            <p>10 points</p>
+            <p>+3 sqft</p>
+            <p>1s</p>
+        </div>
+        <div class="store" name="Gompei" cost="15" reap="10" cooldown="2.0" auto="true" src="./gompei.png"
+            onclick="buy(event.currentTarget)">
+            <div class="widget" reap="10" cooldown="2.0" auto="true" name="Gompei">
+                <img src="./gompei.png">
+                <div class="overlay-slide" style="animation-duration: 2s;"></div>
+            </div>
+            <p>Gompei</p>
+            <p>15 points</p>
+            <p>+10 sqft</p>
+            <p>2.0s</p>
+        </div>
+        <div class="store" name="Super-Gompei" cost="150" reap="100" cooldown="5.0" auto="true" src="./gompei.png"
+            onclick="buy(event.currentTarget)">
+            <div class="widget" reap="100" cooldown="5.0" auto="true" name="Super-Gompei">
+                <img src="./gompei.png" id="super-gompei">
+                <div class="overlay-slide" style="animation-duration: 5s;"></div>
+            </div>
+            <p>Super-Gompei</p>
+            <p>150 points</p>
+            <p>+100 sqft</p>
+            <p>5.0s</p>
+        </div>
+        <div class="store" name="Ultra-Gompei" cost="200" reap="150" cooldown="8.0" auto="true" src="./gompei.png"
+            onclick="buy(event.currentTarget)">
+            <div class="widget" reap="150" cooldown="8.0" auto="true" name="Ultra-Gompei">
+                <img src="./gompei.png" id="ultra-gompei">
+                <div class="overlay-slide" style="animation-duration: 5s;"></div>
+            </div>
+            <p>Ultra-Gompei</p>
+            <p>200 points</p>
+            <p>+150 sqft</p>
+            <p>8.0s</p>
+        </div>
+    </div>
+    <div>ULTRA GOMPEIIIII</div>
+    <div id="ultra-gompei-container"></div>
+
+    <div>THE Super-Gompei</div>
+    <div id="super-gompei-container"></div>
+    
+    <div>Lawns</div> 
+    <div id="lawn-container"></div>
+
+    <div>Baby Gompeis</div>
+    <div id="baby-gompei-container"></div>
+    
+    <div>Gompeis </div>
+    <div id="gompei-container"></div>
+    
+</body>
+
+</html>
