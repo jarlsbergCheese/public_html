@@ -16,7 +16,7 @@ function getRandomInteger(min, max) {
 
 // ITEM HAVERS
 
-let playerItems = [getElementById("lawn-mower").getAttribute("bought")]
+let playerItems = [document.getElementById("lawn-mower").getAttribute("bought")]
 
 
 
@@ -135,7 +135,7 @@ function harvest(widget) {
     }
 
     //Lawnmower Effect
-    if (playerItems[0] && widget.getAttribute("name") == "Lawn") {
+    if (playerItems[0] == true && widget.getAttribute("name") == "Lawn") {
         harvest(lawn_container.children[getRandomInteger(0, lawn_container.children.length - 1)])
     }
 
@@ -181,9 +181,11 @@ function buyItem(item) {
     if (buying.getAttribute('cost') < score) {
         buying.setAttribute('bought', "true")
         changeScore(-parseInt(buying.getAttribute('cost')));
-        playerItems = [getElementById("lawn-mower").getAttribute("bought")]
+        playerItems = [document.getElementById("lawn-mower").getAttribute("bought")]    
     }
 
 }
+
+console.log(playerItems[0])
 
 changeScore(0);
