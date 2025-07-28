@@ -3,13 +3,23 @@ let baby_gompei_container = document.getElementById("baby-gompei-container");
 let gompei_container = document.getElementById("gompei-container");
 let super_gompei_container = document.getElementById("super-gompei-container");
 let ultra_gompei_container = document.getElementById("ultra-gompei-container");
-
+let brick_container = document.getElementById("brick-container");
 
 let score_element = document.getElementById("score");
 let stores = document.getElementsByClassName("store");
 
+// ITEM HAVERS
+
+const playerItems = {
+    hasLawn: false,
+}
+
+
+
+
 let score = 5;
 let super_gompei_count = 0;
+let ultra_gompei_count = 0;
 
 function changeScore(amount) {
     score += amount;
@@ -36,11 +46,20 @@ function buy(store) {
     changeScore(-cost);
 
     let super_gompei = document.querySelector("#super-gompei-container #super-gompei")?.parentElement
-    if(store.getAttribute("name") == "Super-Gompei" && super_gompei != null) {
+    if (store.getAttribute("name") == "Super-Gompei" && super_gompei != null) {
         let old_yield = parseInt(super_gompei.getAttribute("reap"));
         super_gompei.setAttribute("reap", old_yield + 100)
         super_gompei_count += 1
         document.body.style = "--gompei-count:" + super_gompei_count
+        return;
+    }
+
+    let ultra_gompei = document.querySelector("#ultra-gompei-container #ultra-gompei")?.parentElement
+    if (store.getAttribute("name") == "Ultra-Gompei" && ultra_gompei != null) {
+        let old_yield = parseInt(ultra_gompei.getAttribute("reap"));
+        ultra_gompei.setAttribute("reap", old_yield + 50)
+        ultra_gompei_count += 1
+        document.body.style = "--gompei-count:" + ultra_gompei_count
         return;
     }
 
@@ -49,26 +68,32 @@ function buy(store) {
     new_widget.onclick = () => {
         harvest(new_widget);
     }
+    // Bricks
+    if (store.getAttribute("name") == "Brick Road") {
+        brick_container.appendChild(new_widget)
+    }
     // Lawn
-    if(store.getAttribute("name") == "Lawn"){
+    if (store.getAttribute("name") == "Lawn") {
         lawn_container.appendChild(new_widget)
     }
-    if(store.getAttribute("name") == "Baby-Gompei"){
+    if (store.getAttribute("name") == "Baby-Gompei") {
         baby_gompei_container.appendChild(new_widget)
     }
     // Gompei
-    if(store.getAttribute("name") == "Gompei"){
+    if (store.getAttribute("name") == "Gompei") {
         gompei_container.appendChild(new_widget)
     }
     // Super
-    if(store.getAttribute("name") == "Super-Gompei"){
+    if (store.getAttribute("name") == "Super-Gompei") {
         super_gompei_container.appendChild(new_widget)
     }
     // Ultra
-    if(store.getAttribute("name") == "Ultra-Gompei"){
+    if (store.getAttribute("name") == "Ultra-Gompei") {
         ultra_gompei_container.appendChild(new_widget)
+        // Initialize a click counter for the rainbow effect
+        new_widget.setAttribute("data-clicks", "0");
     }
-  
+
 
     if (new_widget.getAttribute("auto") == "true") {
         new_widget.setAttribute("harvesting", "")
@@ -92,6 +117,19 @@ function harvest(widget) {
         return;
     }
 
+    // If the clicked item is an Ultra Gompei, update its rainbow effect
+    if (widget.querySelector("#ultra-gompei")) {
+        let clicks = parseInt(widget.getAttribute("data-clicks") || "0");
+        clicks++;
+        widget.setAttribute("data-clicks", clicks);
+
+        // This sets a CSS variable `--rainbow-intensity` on the element.
+        // The intensity will increase with each click, capping at 1 (fully visible) after 50 clicks.
+        // You can adjust the '50' to change how many clicks are needed.
+        const intensity = Math.min(clicks / 50, 1);
+        widget.style.setProperty('--rainbow-intensity', intensity);
+    }
+
     widget.setAttribute("harvesting", "");
 
     changeScore(parseInt(widget.getAttribute("reap")))
@@ -110,6 +148,29 @@ function givePoints(widget) {
     }
     widget.appendChild(points_element);
 
+}
+
+function hideHolder(id) {
+    let held = document.getElementById(id)
+    console.log(held.style.display)
+    if (held.style.display != "none") {
+        held.style.display = "none";
+    }
+    else{
+        held.style.display = "";
+    }
+}
+
+function organizeItems(){
+    
+}
+
+function buyItem(item){
+
+    let buying = document.getElementById(item);
+    buying.bought = true;
+
+    
 }
 
 changeScore(0);

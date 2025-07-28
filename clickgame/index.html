@@ -10,22 +10,23 @@
 </head>
 
 <body>
-    <h1 class="center">Gompei's Grass Game</h1>
+    <h1 class="center">Gompei's Grass Game!!!!!!!!!!!!!!! <strong>#whimsical</strong></h1>
+    <h4 class="center">By Domenica & Caleb</h4>
     <h2 class="center" id="score">Score: 0</h2>
     <div id="store-container">
         <div class="store" name="Lawn" cost="5" onclick="buy(event.currentTarget)">
-            <div class="widget" reap="2" cooldown="0.5" auto="false" name="Lawn">
+            <div class="widget" reap="2" cooldown="0.3" auto="false" name="Lawn">
                 <p>Lawn</p>
-                <div class="overlay-slide" style="animation-duration: 0.5s;"></div>
+                <div class="overlay-slide" style="animation-duration: 0.3s;"></div>
             </div>
             <p>Lawn</p>
             <p>5 points</p>
             <p>+2 sqft</p>
-            <p>0.5s</p>
+            <p>0.3s</p>
         </div>
         <div class="store" name="Baby-Gompei" cost="10" onclick="buy(event.currentTarget)">
             <div class="widget" reap="3" cooldown="1" auto="true" name="Baby-Gompei">
-                <p>Baby-Gompei</p>
+                <img src="../assets/babyGompei.jpg">
                 <div class="overlay-slide" style="animation-duration: 1s;"></div>
             </div>
             <p>Baby Gompei</p>
@@ -33,55 +34,87 @@
             <p>+3 sqft</p>
             <p>1s</p>
         </div>
-        <div class="store" name="Gompei" cost="15" reap="10" cooldown="2.0" auto="true" src="./gompei.png"
+
+        <div class="store" name="Gompei" cost="100" reap="70" cooldown="2.0" auto="true" src="./gompei.png"
             onclick="buy(event.currentTarget)">
-            <div class="widget" reap="10" cooldown="2.0" auto="true" name="Gompei">
+            <div class="widget" reap="70" cooldown="2.0" auto="true" name="Gompei">
                 <img src="./gompei.png">
                 <div class="overlay-slide" style="animation-duration: 2s;"></div>
             </div>
             <p>Gompei</p>
-            <p>15 points</p>
-            <p>+10 sqft</p>
+            <p>100 points</p>
+            <p>+70 sqft</p>
             <p>2.0s</p>
         </div>
-        <div class="store" name="Super-Gompei" cost="150" reap="100" cooldown="5.0" auto="true" src="./gompei.png"
+        <div class="store" name="Brick Road" cost="150" reap="120" cooldown="3.0" auto="false"
             onclick="buy(event.currentTarget)">
-            <div class="widget" reap="100" cooldown="5.0" auto="true" name="Super-Gompei">
+            <div class="widget" reap="120" cooldown="3.0" auto="false" name="Brick Road">
+                <img src="../assets/bricks.png">
+                <div class="overlay-slide" style="animation-duration: 3s;"></div>
+            </div>
+            <p>Brick Road</p>
+            <p>150 points</p>
+            <p>+120 sqft</p>
+            <p>3.0s</p>
+        </div>
+        <div class="store" name="Super-Gompei" cost="150" reap="50" cooldown="3.5" auto="true" src="./gompei.png"
+            onclick="buy(event.currentTarget)">
+            <div class="widget" reap="50" cooldown="3.5" auto="true" name="Super-Gompei">
                 <img src="./gompei.png" id="super-gompei">
                 <div class="overlay-slide" style="animation-duration: 5s;"></div>
             </div>
-            <p>Super-Gompei</p>
+            <p>Super Gompei</p>
             <p>150 points</p>
-            <p>+100 sqft</p>
-            <p>5.0s</p>
+            <p>+50 sqft</p>
+            <p>3.5s</p>
         </div>
-        <div class="store" name="Ultra-Gompei" cost="200" reap="150" cooldown="8.0" auto="true" src="./gompei.png"
+        <div class="store" name="Ultra-Gompei" cost="200" reap="100" cooldown="6.0" auto="true" src="./gompei.png"
             onclick="buy(event.currentTarget)">
-            <div class="widget" reap="150" cooldown="8.0" auto="true" name="Ultra-Gompei">
-                <img src="./gompei.png" id="ultra-gompei">
-                <div class="overlay-slide" style="animation-duration: 5s;"></div>
+            <div class="widget" reap="100" cooldown="6.0" auto="true" name="Ultra-Gompei">
+                <img src="./gompei.png" id="ultra-gompei" class="ultra-gompei">
+                <div class="rainbow"></div>
+                <div class="overlay-slide" style="animation-duration: 6s;"></div>
             </div>
-            <p>Ultra-Gompei</p>
+            <p>Ultra Gompei</p>
             <p>200 points</p>
-            <p>+150 sqft</p>
-            <p>8.0s</p>
+            <p>+100 sqft</p>
+            <p>6.0s</p>
         </div>
     </div>
-    <div>ULTRA GOMPEIIIII</div>
-    <div id="ultra-gompei-container"></div>
+    <div id="player-menu">
+        <div id="widget-holder">
+            <div onclick="hideHolder('ultra-gompei-container')">ULTRA GOMPEIIIII</div>
+            <div id="ultra-gompei-container"></div>
 
-    <div>THE Super-Gompei</div>
-    <div id="super-gompei-container"></div>
-    
-    <div>Lawns</div> 
-    <div id="lawn-container"></div>
+            <div onclick="hideHolder('super-gompei-container')">THE Super Gompei</div>
+            <div id="super-gompei-container"></div>
 
-    <div>Baby Gompeis</div>
-    <div id="baby-gompei-container"></div>
-    
-    <div>Gompeis </div>
-    <div id="gompei-container"></div>
-    
+            <div onclick="hideHolder('lawn-container')">Lawns</div>
+            <div id="lawn-container"></div>
+
+            <div onclick="hideHolder('brick-container')">Brick Roads</div>
+            <div id="brick-container"></div>
+
+            <div onclick="hideHolder('baby-gompei-container')">Baby Gompeis</div>
+            <div id="baby-gompei-container"></div>
+
+            <div onclick="hideHolder('gompei-container')">Gompeis </div>
+            <div id="gompei-container"></div>
+        </div>
+
+        <div id="shop-holder">
+            <div id="user-items">
+                YOUR ITEMS
+            </div>
+            <div id="store-items">
+                STORE ITEMS
+                <div id="lawn-mower" class="item" bought="false" name="Lawn Mower">
+                    <h3> LAWN MOWER </h3>
+                    <p> When you harvest a Lawn, there is a small chance another random lawn will be harvested </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
