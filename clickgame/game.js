@@ -8,11 +8,15 @@ let brick_container = document.getElementById("brick-container");
 let score_element = document.getElementById("score");
 let stores = document.getElementsByClassName("store");
 
+function getRandomInteger(min, max) {
+    min = Math.ceil(min); // Ensure min is rounded up to the nearest whole number
+    max = Math.floor(max); // Ensure max is rounded down to the nearest whole number
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
 // ITEM HAVERS
 
-const playerItems = {
-    hasLawn: false,
-}
+let playerItems = [getElementById("lawn-mower").getAttribute("bought")]
 
 
 
@@ -130,6 +134,11 @@ function harvest(widget) {
         widget.style.setProperty('--rainbow-intensity', intensity);
     }
 
+    //Lawnmower Effect
+    if (playerItems[0] && widget.getAttribute("name") == "Lawn") {
+        harvest(lawn_container.children[getRandomInteger(0, lawn_container.children.length - 1)])
+    }
+
     widget.setAttribute("harvesting", "");
 
     changeScore(parseInt(widget.getAttribute("reap")))
@@ -156,21 +165,25 @@ function hideHolder(id) {
     if (held.style.display != "none") {
         held.style.display = "none";
     }
-    else{
+    else {
         held.style.display = "";
     }
 }
 
-function organizeItems(){
-    
+function organizeItems() {
+
 }
 
-function buyItem(item){
+function buyItem(item) {
 
     let buying = document.getElementById(item);
-    buying.bought = true;
 
-    
+    if (buying.getAttribute('cost') < score) {
+        buying.setAttribute('bought', "true")
+        changeScore(-parseInt(buying.getAttribute('cost')));
+        playerItems = [getElementById("lawn-mower").getAttribute("bought")]
+    }
+
 }
 
 changeScore(0);
