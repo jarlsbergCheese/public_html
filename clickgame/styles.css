@@ -227,10 +227,18 @@ body {
     width: 27%;
     float: right;
     border: 5px solid white;
-
+}
+#store-items {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.item{
+#user-items {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
     border: 5px solid white;
-    width: 50%;
+    width: 45%;
 }
