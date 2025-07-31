@@ -35,7 +35,7 @@ let ultra_gompei_count = 0;
 // Whenever points are added or removed, this function updates all the necesary fields
 function changeScore(amount) {
     score += amount;
-    score_element.innerHTML = "Score: " + score;
+    score_element.innerHTML = "Square Feet: " + score;
 
     for (let store of stores) {
         let cost = parseInt(store.getAttribute("cost"));
@@ -54,33 +54,33 @@ function changeScore(amount) {
 function updateCosts() {
     let lawn = document.getElementById('lawn');
     lawn.setAttribute("cost", lawn.getAttribute("base-cost") ** (1 + ((lawn_container.children.length) * 0.10)));
-    document.getElementById("lawn-pricetag").innerHTML = Math.floor(lawn.getAttribute("cost")) + " points"
+    document.getElementById("lawn-pricetag").innerHTML = Math.floor(lawn.getAttribute("cost")) + " sqrft"
 
     let baby_gompei = document.getElementById('baby-gompei');
     baby_gompei.setAttribute("cost", baby_gompei.getAttribute("base-cost") ** (1 + ((baby_gompei_container.children.length) * 0.10)));
-    document.getElementById("baby-gompei-pricetag").innerHTML = Math.floor(baby_gompei.getAttribute("cost")) + " points"
+    document.getElementById("baby-gompei-pricetag").innerHTML = Math.floor(baby_gompei.getAttribute("cost")) + " sqrft"
 
     // Minnimum Wage Item effects the cost of Gompei
     let gompei = document.getElementById('gompei');
     if (!gompeiWage) {
         gompei.setAttribute("cost", gompei.getAttribute("base-cost") ** (1 + ((gompei_container.children.length) * 0.10)));
-        document.getElementById("gompei-pricetag").innerHTML = Math.floor(gompei.getAttribute("cost")) + " points"
+        document.getElementById("gompei-pricetag").innerHTML = Math.floor(gompei.getAttribute("cost")) + " sqrft"
     } else {
         gompei.setAttribute("cost", (gompei.getAttribute("base-cost") ** (1 + ((gompei_container.children.length) * 0.10))) / 2);
-        document.getElementById("gompei-pricetag").innerHTML = Math.floor(gompei.getAttribute("cost")) + " points <br> (Minnimum Wage)"
+        document.getElementById("gompei-pricetag").innerHTML = Math.floor(gompei.getAttribute("cost")) + " sqrft <br> (Minnimum Wage)"
     }
 
     let brick_road = document.getElementById('brick-road');
     brick_road.setAttribute("cost", brick_road.getAttribute("base-cost") ** (1 + ((brick_container.children.length) * 0.10)));
-    document.getElementById("brick-road-pricetag").innerHTML = Math.floor(brick_road.getAttribute("cost")) + " points"
+    document.getElementById("brick-road-pricetag").innerHTML = Math.floor(brick_road.getAttribute("cost")) + " sqrft"
 
     let super_gompei_price = document.getElementById('super-gompei-id');
     super_gompei_price.setAttribute("cost", super_gompei_price.getAttribute("base-cost") ** (1 + ((super_gompei_count) * 0.10)));
-    document.getElementById("super-gompei-pricetag").innerHTML = Math.floor(super_gompei_price.getAttribute("cost")) + " points"
+    document.getElementById("super-gompei-pricetag").innerHTML = Math.floor(super_gompei_price.getAttribute("cost")) + " sqrft"
 
     let ultra_gompei_price = document.getElementById('ultra-gompei-id');
     ultra_gompei_price.setAttribute("cost", ultra_gompei_price.getAttribute("base-cost") ** (1 + ((ultra_gompei_container.children.length) * 0.10)));
-    document.getElementById("ultra-gompei-pricetag").innerHTML = Math.floor(ultra_gompei_price.getAttribute("cost")) + " points"
+    document.getElementById("ultra-gompei-pricetag").innerHTML = Math.floor(ultra_gompei_price.getAttribute("cost")) + " sqrft"
 }
 
 // This function is called in the onclick() function for each of the widgets, allowing them to be purchased from the store

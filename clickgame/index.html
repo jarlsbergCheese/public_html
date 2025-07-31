@@ -13,7 +13,7 @@
     <div id="top">
         <h1 class="center">Gompei's Grass Game!!!!!!!!!!!!!!! <strong>#whimsical</strong></h1>
         <h4 class="center">By Domenica & Caleb</h4>
-        <h2 class="center" id="score">Score: 0</h2>
+        <h2 class="center" id="score">Square Feet: 0</h2>
     </div>
     <div>
         <h1> nobody will ever see this</h1>
@@ -66,7 +66,7 @@
                 <div class="overlay-slide" style="animation-duration: 0.6s;"></div>
             </div>
             <p>Lawn</p>
-            <p id="lawn-pricetag">5 points</p>
+            <p id="lawn-pricetag">5 Sqrft</p>
             <p class="reapTag">+2 sqft</p>
             <p>0.6s</p>
         </div>
@@ -77,7 +77,7 @@
                 <div class="overlay-slide" style="animation-duration: 2s;"></div>
             </div>
             <p>Baby Gompei</p>
-            <p id="baby-gompei-pricetag">10 points</p>
+            <p id="baby-gompei-pricetag">10 Sqrft</p>
             <p class="reapTag">+3 sqft</p>
             <p>2.0s</p>
         </div>
@@ -89,7 +89,7 @@
                 <div class="overlay-slide" style="animation-duration: 4s;"></div>
             </div>
             <p>Gompei</p>
-            <p id="gompei-pricetag">500 points</p>
+            <p id="gompei-pricetag">500 Sqrft</p>
             <p class="reapTag">+70 sqft</p>
             <p>4.0s</p>
         </div>
@@ -100,7 +100,7 @@
                 <div class="overlay-slide" style="animation-duration: 6s;"></div>
             </div>
             <p>Brick Road</p>
-            <p id="brick-road-pricetag">600 points</p>
+            <p id="brick-road-pricetag">600 Sqrft</p>
             <p>+180 sqft</p>
             <p>6.0s</p>
         </div>
@@ -111,7 +111,7 @@
                 <div class="overlay-slide" style="animation-duration: 20s;"></div>
             </div>
             <p>Super Gompei</p>
-            <p id="super-gompei-pricetag">10000 points</p>
+            <p id="super-gompei-pricetag">10000 Sqrft</p>
             <p class="reapTag">+5250 sqft</p>
             <p>20s</p>
         </div>
@@ -123,7 +123,7 @@
                 <div class="overlay-slide" style="animation-duration: 6s;"></div>
             </div>
             <p>Ultra Gompei</p>
-            <p id="ultra-gompei-pricetag">100000 points</p>
+            <p id="ultra-gompei-pricetag">100000 Sqrft</p>
             <p>YOU WIN</p>
             <p>If you buy this, you win.</p>
             <p>
@@ -162,33 +162,33 @@
                     onclick="buyItem(event.currentTarget)">
                     <h3> LAWN MOWER </h3>
                     <p> When you harvest a Lawn, there is a chance another random lawn will be harvested </p>
-                    <p> Cost: 50 Points</p>
+                    <p> Cost: 50 Sqrft</p>
                 </div>
                 <div id="gompei-day-care" class="item" bought="false" name="Gompei Day Care" cost="250" item-num="1"
                     onclick="buyItem(event.currentTarget)">
                     <h3> GOMPEI DAY CARE </h3>
                     <p> When you purchase a Baby Gompei, there is a really small chance one of your other Baby Gompeis
                         will grow up into a normal Gompei</p>
-                    <p> Cost: 250</p>
+                    <p> Cost: 250 Sqrft</p>
                 </div>
                 <div id="real-estate-agent" class="item" bought="false" name="Real Estate Agent" cost="300" item-num="2"
                     onclick="buyItem(event.currentTarget)">
                     <h3> REAL ESTATE AGENT </h3>
                     <p> For every 10 Lawns you own, the Lawns Square Feet per Harvest is doubled </p>
-                    <p> Cost: 300 Points</p>
+                    <p> Cost: 300 Sqrft</p>
                 </div>
                 <div id="adoption-papers" class="item" bought="false" name="Adoption Papers" cost="500" item-num="3"
                     onclick="buyItem(event.currentTarget)">
                     <h3> ADOPTION PAPERS </h3>
                     <p> Your Baby Gompeis double their Square Feet per Harvest for every 4 normal Gompei you have. </p>
-                    <p> Cost: 500 Points</p>
+                    <p> Cost: 500 Sqrft</p>
                 </div>
                 <div id="brick-mowers" class="item" bought="false" name="Brick-Mowers" cost="1000" item-num="4"
                     onclick="buyItem(event.currentTarget)">
                     <h3> BRICK MOWERS </h3>
                     <p> When you harvest a Brick Road, one of your lawns will be mowed, also possibly activating your
                         lawn mower (if you have it) </p>
-                    <p> Cost: 1000 Points</p>
+                    <p> Cost: 1000 Sqrft</p>
                 </div>
                 <div id="mega-mower" class="item" bought="false" name="Mega-Mower" cost="1200" item-num="5"
                     pre-req="lawn-mower" onclick="buyItem(event.currentTarget)">
@@ -196,14 +196,14 @@
                     <p> When you harvest a Lawn, you will always mow an additional lawn, and there is now a chance to
                         mow a third lawn.</p>
                     <p> YOU MUST OWN LAWN MOWER TO PURCHASE</p>
-                    <p> Cost: 1200 Points</p>
+                    <p> Cost: 1200 Sqrft</p>
                 </div>
                 <div id="minnimum-wage" class="item" bought="false" name="Minimum Wage" cost="1600" item-num="6"
                     onclick="buyItem(event.currentTarget)">
                     <h3> MINIMUM WAGE </h3>
                     <p> Every time you purchase any widget, there is a small chance that the price of the next gompei you
                         buy is halved </p>
-                    <p> Cost: 1600 Points</p>
+                    <p> Cost: 1600 Sqrft</p>
                 </div>
                 <div id="high-school-diplomas" class="item" bought="false" name="High School Diplomas"
                     cost="5000" item-num="7" pre-req="gompei-day-care" onclick="buyItem(event.currentTarget)">
@@ -211,7 +211,7 @@
                     <p> When you purchase a Gompei, there is a really small chance one of your other Gompeis
                         will graduate into a Super Gompei </p>
                     <p> YOU MUST OWN GOMPEI DAY CARE TO PURCHASE</p>
-                    <p> Cost: 5000 Points</p>
+                    <p> Cost: 5000 Sqrft</p>
                 </div>
 
 
