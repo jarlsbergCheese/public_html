@@ -112,7 +112,7 @@ function buy(store) {
     // High school diplomas is placed before gompei daycare so that a baby gompei can not be upgraded twice into a super gompei and break the containers
 
     // high school diploma item
-    if (playerItems[7] == "true" && new_widget.getAttribute("name") == "Gompei" && getRandomInteger(15, 15) == 15) {
+    if (playerItems[7] == "true" && new_widget.getAttribute("name") == "Gompei" && getRandomInteger(1, 15) == 15) {
         new_widget = document.getElementById("super-gompei-id").firstElementChild.cloneNode(true);
     }
 
