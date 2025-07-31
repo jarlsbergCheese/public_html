@@ -66,7 +66,7 @@ function updateCosts() {
         gompei.setAttribute("cost", gompei.getAttribute("base-cost") ** (1 + ((gompei_container.children.length) * 0.10)));
         document.getElementById("gompei-pricetag").innerHTML = Math.floor(gompei.getAttribute("cost")) + " points"
     } else {
-        gompei.setAttribute("cost", (gompei.getAttribute("base-cost") ** (1 + ((gompei_container.children.length) * 0.10))) /2 );
+        gompei.setAttribute("cost", (gompei.getAttribute("base-cost") ** (1 + ((gompei_container.children.length) * 0.10))) / 2);
         document.getElementById("gompei-pricetag").innerHTML = Math.floor(gompei.getAttribute("cost")) + " points <br> (Minnimum Wage)"
     }
 
@@ -95,15 +95,8 @@ function buy(store) {
     }
     changeScore(-cost);
 
-    // // Handles super-gompei stacking
-    // let super_gompei = document.querySelector("#super-gompei-container #super-gompei")?.parentElement
-    // if (store.getAttribute("name") == "Super-Gompei" && super_gompei != null) {
-    //     let old_yield = parseInt(super_gompei.getAttribute("reap"));
-    //     super_gompei.setAttribute("reap", old_yield + 1000)
-    //     super_gompei_count += 1
-    //     document.body.style = "--gompei-count:" + super_gompei_count
-    //     return;
-    // }
+    // Handles super-gompei stacking
+    
 
     // handles ultra-gompei stacking
     let ultra_gompei = document.querySelector("#ultra-gompei-container #ultra-gompei")?.parentElement
@@ -112,7 +105,6 @@ function buy(store) {
         ultra_gompei.setAttribute("reap", old_yield + 50)
         ultra_gompei_count += 1
         document.body.style = "--gompei-count:" + ultra_gompei_count
-        return;
     }
 
     let new_widget = store.firstElementChild.cloneNode(true);
@@ -134,16 +126,6 @@ function buy(store) {
         harvest(new_widget);
     }
 
-    // Handles super-gompei stacking
-    let super_gompei = document.querySelector("#super-gompei-container #super-gompei")?.parentElement
-    if (store.getAttribute("name") == "Super-Gompei" && super_gompei != null) {
-        let old_yield = parseInt(super_gompei.getAttribute("reap"));
-        super_gompei.setAttribute("reap", old_yield + 1000)
-        super_gompei_count += 1
-        document.body.style = "--gompei-count:" + super_gompei_count
-        return;
-    }
-
     // The following code handles the placement of the new widget in the correct container based on its type
     if (store.getAttribute("name") == "Brick-Road") {
         brick_container.appendChild(new_widget)
@@ -161,11 +143,28 @@ function buy(store) {
     if (store.getAttribute("name") == "Gompei" && new_widget.getAttribute("name") != "Super-Gompei") {
         gompei_container.appendChild(new_widget)
     }
-    // high school diploma item
-    else if(store.getAttribute("name") == "Gompei" && playerItems[7] == "true" && new_widget.getAttribute("name") == "Super-Gompei") {
-        super_gompei_container.appendChild(new_widget)
+    // high school diploma item (it uses the super gompei stacking code from above, I should probably just make that a function)
+    else if (store.getAttribute("name") == "Gompei" && playerItems[7] == "true" && new_widget.getAttribute("name") == "Super-Gompei") {
+
+        let super_gompei = document.querySelector("#store-container #super-gompei")?.parentElement
+        if (new_widget.getAttribute("name") == "Super-Gompei" && super_gompei_container.children.length != 0) {
+            let old_yield = parseInt(super_gompei.getAttribute("reap"));
+            super_gompei.setAttribute("reap", old_yield + 1000)
+            super_gompei_count += 1
+            document.body.style = "--gompei-count:" + super_gompei_count
+        }
+        else {
+            super_gompei_container.appendChild(new_widget)
+        }
     }
-    if (store.getAttribute("name") == "Super-Gompei") {
+    let super_gompei = document.querySelector("#store-container #super-gompei")?.parentElement
+    if (store.getAttribute("name") == "Super-Gompei" && super_gompei_container.children.length != 0) {
+        let old_yield = parseInt(super_gompei.getAttribute("reap"));
+        super_gompei.setAttribute("reap", old_yield + 1000)
+        super_gompei_count += 1
+        document.body.style = "--gompei-count:" + super_gompei_count
+    }
+    else if (store.getAttribute("name") == "Super-Gompei" && super_gompei_container.children.length == 0) {
         super_gompei_container.appendChild(new_widget)
     }
     if (store.getAttribute("name") == "Ultra-Gompei") {

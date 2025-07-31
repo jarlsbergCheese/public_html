@@ -67,13 +67,13 @@
         </div>
         <div id="super-gompei-id" class="store" name="Super-Gompei" base-cost="10000" cost="10000" reap="5250"
             cooldown="10" auto="true" src="./gompei.png" onclick="buy(event.currentTarget)">
-            <div class="widget" reap="5250" cooldown="10" auto="true" name="Super-Gompei">
+            <div class="widget" base-reap="5250" reap="5250" cooldown="10" auto="true" name="Super-Gompei">
                 <img src="./gompei.png" id="super-gompei">
                 <div class="overlay-slide" style="animation-duration: 10s;"></div>
             </div>
             <p>Super Gompei</p>
             <p id="super-gompei-pricetag">10000 points</p>
-            <p>+5250 sqft</p>
+            <p class="reapTag">+5250 sqft</p>
             <p>10s</p>
         </div>
         <div id="ultra-gompei-id" class="store" name="Ultra-Gompei" base-cost="100000" cost="100000" reap="100"
@@ -164,7 +164,7 @@
                     <p> Cost: 1600 Points</p>
                 </div>
                 <div id="high-school-diplomas" class="item" bought="false" name="High School Diplomas"
-                    cost="5000" item-num="7" onclick="buyItem(event.currentTarget)">
+                    cost="5000" item-num="7" pre-req="gompei-day-care" onclick="buyItem(event.currentTarget)">
                     <h3> HIGH SCHOOL DIPLOMAS </h3>
                     <p> When you purchase a Gompei, there is a really small chance one of your other Gompeis
                         will graduate into a Super Gompei </p>
