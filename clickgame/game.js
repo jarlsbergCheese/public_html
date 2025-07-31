@@ -75,7 +75,7 @@ function updateCosts() {
     document.getElementById("brick-road-pricetag").innerHTML = Math.floor(brick_road.getAttribute("cost")) + " points"
 
     let super_gompei_price = document.getElementById('super-gompei-id');
-    super_gompei_price.setAttribute("cost", super_gompei_price.getAttribute("base-cost") ** (1 + ((super_gompei_container.children.length) * 0.10)));
+    super_gompei_price.setAttribute("cost", super_gompei_price.getAttribute("base-cost") ** (1 + ((super_gompei_count) * 0.10)));
     document.getElementById("super-gompei-pricetag").innerHTML = Math.floor(super_gompei_price.getAttribute("cost")) + " points"
 
     let ultra_gompei_price = document.getElementById('ultra-gompei-id');
