@@ -228,6 +228,7 @@ body {
     float: right;
     border: 5px solid white;
 }
+
 #store-items {
     display: flex;
     flex-wrap: wrap;
@@ -241,4 +242,18 @@ body {
 .item {
     border: 5px solid white;
     width: 45%;
+}
+
+#top {
+
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+    text-align: center;
+
+    background-color: rgb(50, 71, 41);
+    border: 5px solid white;
+
 }

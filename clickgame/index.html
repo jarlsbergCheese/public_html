@@ -10,21 +10,29 @@
 </head>
 
 <body>
-    <h1 class="center">Gompei's Grass Game!!!!!!!!!!!!!!! <strong>#whimsical</strong></h1>
-    <h4 class="center">By Domenica & Caleb</h4>
-    <h2 class="center" id="score">Score: 0</h2>
+    <div id="top">
+        <h1 class="center">Gompei's Grass Game!!!!!!!!!!!!!!! <strong>#whimsical</strong></h1>
+        <h4 class="center">By Domenica & Caleb</h4>
+        <h2 class="center" id="score">Score: 0</h2>
+    </div>
+    <div>
+        <h1> nobody will ever see this</h1>
+        <h4> this is hidden text</h4>
+        <h2> wow </h2>
+    </div>
     <div id="store-container">
         <div id="lawn" class="store" name="Lawn" base-cost="5" cost="5" onclick="buy(event.currentTarget)">
-            <div class="widget" reap="2" cooldown="0.3" auto="false" name="Lawn">
+            <div class="widget" base-reap="2" reap="2" cooldown="0.3" auto="false" name="Lawn">
                 <p>Lawn</p>
                 <div class="overlay-slide" style="animation-duration: 0.3s;"></div>
             </div>
             <p>Lawn</p>
             <p id="lawn-pricetag">5 points</p>
-            <p>+2 sqft</p>
+            <p class="reapTag">+2 sqft</p>
             <p>0.3s</p>
         </div>
-        <div id="baby-gompei" class="store" name="Baby-Gompei" base-cost="10" cost="10" onclick="buy(event.currentTarget)">
+        <div id="baby-gompei" class="store" name="Baby-Gompei" base-cost="10" cost="10"
+            onclick="buy(event.currentTarget)">
             <div class="widget" base-reap="3" reap="3" cooldown="1" auto="true" name="Baby-Gompei">
                 <img src="../assets/babyGompei.jpg">
                 <div class="overlay-slide" style="animation-duration: 1s;"></div>
@@ -35,20 +43,20 @@
             <p>1s</p>
         </div>
 
-        <div id="gompei" class="store" name="Gompei" base-cost="500" cost="500" reap="70" cooldown="2.0" auto="true" src="./gompei.png"
-            onclick="buy(event.currentTarget)">
+        <div id="gompei" class="store" name="Gompei" base-cost="500" cost="500" cooldown="2.0" auto="true"
+            src="./gompei.png" onclick="buy(event.currentTarget)">
             <div class="widget" reap="70" cooldown="2.0" auto="true" name="Gompei">
                 <img src="./gompei.png">
                 <div class="overlay-slide" style="animation-duration: 2s;"></div>
             </div>
             <p>Gompei</p>
             <p id="gompei-pricetag">500 points</p>
-            <p>+70 sqft</p>
+            <p class="reapTag">+70 sqft</p>
             <p>2.0s</p>
         </div>
-        <div id="brick-road" class="store" name="Brick Road" base-cost="600" cost="600" reap="180" cooldown="3.0" auto="false"
-            onclick="buy(event.currentTarget)">
-            <div class="widget" reap="180" cooldown="3.0" auto="false" name="Brick Road">
+        <div id="brick-road" class="store" name="Brick-Road" base-cost="600" cost="600" reap="180" cooldown="3.0"
+            auto="false" onclick="buy(event.currentTarget)">
+            <div class="widget" reap="180" cooldown="3.0" auto="false" name="Brick-Road">
                 <img src="../assets/bricks.png">
                 <div class="overlay-slide" style="animation-duration: 3s;"></div>
             </div>
@@ -57,19 +65,19 @@
             <p>+180 sqft</p>
             <p>3.0s</p>
         </div>
-        <div id="super-gompei-id" class="store" name="Super-Gompei" base-cost="1500" cost="1500" reap="5250" cooldown="10" auto="true"
-            src="./gompei.png" onclick="buy(event.currentTarget)">
+        <div id="super-gompei-id" class="store" name="Super-Gompei" base-cost="10000" cost="10000" reap="5250"
+            cooldown="10" auto="true" src="./gompei.png" onclick="buy(event.currentTarget)">
             <div class="widget" reap="5250" cooldown="10" auto="true" name="Super-Gompei">
                 <img src="./gompei.png" id="super-gompei">
                 <div class="overlay-slide" style="animation-duration: 10s;"></div>
             </div>
             <p>Super Gompei</p>
-            <p id="super-gompei-pricetag">1500 points</p>
+            <p id="super-gompei-pricetag">10000 points</p>
             <p>+5250 sqft</p>
             <p>10s</p>
         </div>
-        <div id="ultra-gompei-id" class="store" name="Ultra-Gompei" base-cost="100000" cost="100000" reap="100" cooldown="6.0" auto="true"
-            src="./gompei.png" onclick="buy(event.currentTarget)">
+        <div id="ultra-gompei-id" class="store" name="Ultra-Gompei" base-cost="100000" cost="100000" reap="100"
+            cooldown="6.0" auto="true" src="./gompei.png" onclick="buy(event.currentTarget)">
             <div class="widget" reap="100" cooldown="6.0" auto="true" name="Ultra-Gompei">
                 <img src="./gompei.png" id="ultra-gompei" class="ultra-gompei">
                 <div class="rainbow"></div>
@@ -121,25 +129,49 @@
                         will grow up into a normal Gompei</p>
                     <p> Cost: 250</p>
                 </div>
-                <div id="mega-mower" class="item" bought="false" name="Mega-Mower" cost="300" item-num="2" pre-req="lawn-mower"
+                <div id="real-estate-agent" class="item" bought="false" name="Real Estate Agent" cost="300" item-num="2"
                     onclick="buyItem(event.currentTarget)">
-                    <h3> MEGA MOWER </h3>
-                    <p> When you harvest a Lawn, you will always mow an additional lawn, and there is now a chance to mow a third lawn.</p>
-                    <p> YOU MUST OWN LAWN MOWER TO PURCHASE</p>
+                    <h3> REAL ESTATE AGENT </h3>
+                    <p> For every 10 Lawns you own, the Lawns Square Feet per Harvest is doubled </p>
                     <p> Cost: 300 Points</p>
                 </div>
                 <div id="adoption-papers" class="item" bought="false" name="Adoption Papers" cost="500" item-num="3"
                     onclick="buyItem(event.currentTarget)">
                     <h3> ADOPTION PAPERS </h3>
-                    <p> Your Baby Gompeis gain a little bit more Square Feet per Harvest for every normal Gompei you have. </p>
+                    <p> Your Baby Gompeis double their Square Feet per Harvest for every 4 normal Gompei you have. </p>
                     <p> Cost: 500 Points</p>
                 </div>
-                <div id="brick-mowers" class="item" bought="false" name="Brick-Mowers" cost = "1000" item-num="4"
+                <div id="brick-mowers" class="item" bought="false" name="Brick-Mowers" cost="1000" item-num="4"
                     onclick="buyItem(event.currentTarget)">
                     <h3> BRICK MOWERS </h3>
-                    <p> When you harvest a Brick Road, one of your lawns will be mowed, also possibly activating your lawn mower (if you have it) </p>
+                    <p> When you harvest a Brick Road, one of your lawns will be mowed, also possibly activating your
+                        lawn mower (if you have it) </p>
                     <p> Cost: 1000 Points</p>
                 </div>
+                <div id="mega-mower" class="item" bought="false" name="Mega-Mower" cost="1200" item-num="5"
+                    pre-req="lawn-mower" onclick="buyItem(event.currentTarget)">
+                    <h3> MEGA MOWER </h3>
+                    <p> When you harvest a Lawn, you will always mow an additional lawn, and there is now a chance to
+                        mow a third lawn.</p>
+                    <p> YOU MUST OWN LAWN MOWER TO PURCHASE</p>
+                    <p> Cost: 1200 Points</p>
+                </div>
+                <div id="minnimum-wage" class="item" bought="false" name="Minimum Wage" cost="1600" item-num="6"
+                    onclick="buyItem(event.currentTarget)">
+                    <h3> MINIMUM WAGE </h3>
+                    <p> Every time you purchase any widget, there is a small chance that the price of the next gompei you
+                        buy is halved </p>
+                    <p> Cost: 1600 Points</p>
+                </div>
+                <div id="high-school-diplomas" class="item" bought="false" name="High School Diplomas"
+                    cost="5000" item-num="7" onclick="buyItem(event.currentTarget)">
+                    <h3> HIGH SCHOOL DIPLOMAS </h3>
+                    <p> When you purchase a Gompei, there is a really small chance one of your other Gompeis
+                        will graduate into a Super Gompei </p>
+                    <p> YOU MUST OWN GOMPEI DAY CARE TO PURCHASE</p>
+                    <p> Cost: 5000 Points</p>
+                </div>
+
 
             </div>
         </div>
